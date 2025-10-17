@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6083a0ff00a44e74e810b6c4175e4210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::cameraSettings
+  startPlay: {fileID: 0}
   speed: 10
   invent: 0
   open: 0
@@ -601,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a820cd78f14a52b47abd6c704c902165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::btnScript
+  startPlay: {fileID: 0}
   speed: 10
   invent: 0
   open: 0
@@ -1217,6 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beade430d46f35c48987ad93ecb0d0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerManager
+  startPlay: {fileID: 0}
   speed: 10
   invent: 0
   open: 0

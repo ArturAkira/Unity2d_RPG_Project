@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class cameraSettings : playerManager
 {
@@ -9,7 +11,7 @@ public class cameraSettings : playerManager
         camScene = true;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         camerafollow();
     }
@@ -33,7 +35,7 @@ public class cameraSettings : playerManager
     {
         if (camScene == false)
         {
-            transform.position = Vector2.MoveTowards(transform.position,target.position,speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position,target.position,speed * Time.fixedDeltaTime);
         }
     }
 }

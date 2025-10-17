@@ -6,7 +6,7 @@ public class playerManager : classes
 {
     [SerializeField] startPlay startPlay;
     private Rigidbody2D player;
-    public float speed = 10f;
+    public float speed = 5f;
     private Vector2 moveInput;
     public bool invent, open;
     private GameObject inventario;
