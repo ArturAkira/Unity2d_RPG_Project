@@ -253,10 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d12a48de35a44044addd1f006278138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::startPlay
-  speed: 10
-  invent: 0
-  open: 0
   start: {fileID: 87519596}
+  selecNumber: 0
   nameInputField: {fileID: 338276333}
 --- !u!1 &338276331
 GameObject:
@@ -706,10 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d12a48de35a44044addd1f006278138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::startPlay
-  speed: 10
-  invent: 0
-  open: 0
   start: {fileID: 710341847}
+  selecNumber: 1
   nameInputField: {fileID: 338276333}
 --- !u!1 &951999611
 GameObject:
@@ -1464,10 +1460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d12a48de35a44044addd1f006278138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::startPlay
-  speed: 10
-  invent: 0
-  open: 0
   start: {fileID: 1588978332}
+  selecNumber: 3
   nameInputField: {fileID: 338276333}
 --- !u!1 &1608178753
 GameObject:
