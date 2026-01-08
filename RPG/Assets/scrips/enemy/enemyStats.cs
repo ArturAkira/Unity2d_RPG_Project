@@ -3,13 +3,11 @@ using UnityEngine.Video;
 
 public class enemyStats : MonoBehaviour
 {
-    entityClass enemy;
-    public int vida, defesa, ataque, distancia, magia;
-    private int[] enemyPoints;
+    [SerializeField] entityClass enemy;
+    [SerializeField] public classes classe;
     void Start()
     {
-        enemyPoints = new int[5] { vida, defesa, ataque, distancia, magia };
-        classes.classSetter(ref enemy, enemyPoints);
+        classes.classSetter(ref enemy, classe.enemy1);
         Debug.Log($"Status do inimigo: \nvida: {enemy.vida}, defesa: {enemy.defesa}, ataque: {enemy.ataque}, distâcia: {enemy.distância}, magia: {enemy.magia}");
     }
 }

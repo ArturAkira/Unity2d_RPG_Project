@@ -7,7 +7,7 @@ public class playerManager : MonoBehaviour
     private Vector2 moveInput;
     public bool invent, open;
     private GameObject inventario;
-    private entityClass playerClass;
+    public entityClass playerClass;
 
     void Awake()
     {

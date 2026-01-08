@@ -1,0 +1,10 @@
+using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+
+[CreateAssetMenu(fileName = "New Objects", menuName = "Inventory Objects/Create New")]
+public class obects : ScriptableObject
+{
+    public string itemName;
+    public Sprite itemSprite;
+}
