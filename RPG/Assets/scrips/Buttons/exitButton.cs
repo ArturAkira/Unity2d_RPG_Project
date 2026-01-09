@@ -4,8 +4,12 @@ using UnityEngine.UI;
 public class exitScript : MonoBehaviour
 {
     [SerializeField] private Button buttonExitBtn;
-    [SerializeField] private int sceneSelection;
+    public int sceneIndex;
+    public static int sceneSelection;
     private void Start()
-    {buttonExitBtn.onClick.AddListener(buttonExitClick);}   
-    private void buttonExitClick() {SceneManager.LoadScene(sceneSelection);}
+    {
+        sceneSelection = sceneIndex;
+        buttonExitBtn.onClick.AddListener(buttonExitClick);
+    }   
+    public static void buttonExitClick() {SceneManager.LoadScene(sceneSelection);}
 }

@@ -13,7 +13,14 @@ public class classes : MonoBehaviour
     public int[] guerreiroStats = { 46, 28, 16, 5, 5, };
     public int[] magoStats = {33,15,18,14,20};
     public int[] arqueiroStats = { 38, 15, 17, 20, 10 };
-    public int[] enemy1 = { 10,15,5,5,5};
+
+    public Dictionary<string, int[]> enemyStatsList = new Dictionary<string, int[]>
+    {
+        {"enemy1", new int[] {10,15,5,5,5} }
+    };
+
+
+
     public static void classSetter(ref entityClass n, int[] v)
     {
         n.vida = v[0];

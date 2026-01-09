@@ -2,12 +2,14 @@ using UnityEngine;
 public class playerManager : MonoBehaviour 
 {
     [SerializeField] private classes classes;
+    [SerializeField] private fightEvent fightEvent;
     private Rigidbody2D player;
-    public float speed = 5f;
     private Vector2 moveInput;
-    public bool invent, open;
     private GameObject inventario;
-    public entityClass playerClass;
+    private int maxLife;
+    public float speed = 5f;
+    public bool invent, open;
+    public static entityClass playerClass;
 
     void Awake()
     {
@@ -16,22 +18,28 @@ public class playerManager : MonoBehaviour
     }
     private void Start()
     {
-        switch (startPlay.playerClassSelection)
+        playerClass.vida = fightEvent.tempPlayer.vida;
+        if (playerClass.vida <= 0)
         {
-            case 0:
-                Debug.Log(classes.guerreiroStats);
-                classes.classSetter(ref playerClass, classes.guerreiroStats );
-                Debug.Log("você escolheu o guerreiro");
-                break;
-            case 1:
-                classes.classSetter(ref playerClass, classes.magoStats);
-                Debug.Log("você escolheu o mago");
-                break;
-            case 2:
-                classes.classSetter(ref playerClass, classes.arqueiroStats);
-                Debug.Log("você escolheu o arqueiro");
-                break;
+            switch (startPlay.playerClassSelection)
+            {
+                case 0:
+                    Debug.Log(classes.guerreiroStats);
+                    classes.classSetter(ref playerClass, classes.guerreiroStats);
+                    Debug.Log("você escolheu o guerreiro");
+                    break;
+                case 1:
+                    classes.classSetter(ref playerClass, classes.magoStats);
+                    Debug.Log("você escolheu o mago");
+                    break;
+                case 2:
+                    classes.classSetter(ref playerClass, classes.arqueiroStats);
+                    Debug.Log("você escolheu o arqueiro");
+                    break;
+            }
+            maxLife = playerClass.vida;
         }
+        fightEvent.tempPlayer = playerClass;
         Debug.Log($"Status: \nvida: {playerClass.vida}, defesa: {playerClass.defesa}, ataque: {playerClass.ataque}, distâcia: {playerClass.distância}, magia: {playerClass.magia}");
         open = false;
         inventario.SetActive(false);

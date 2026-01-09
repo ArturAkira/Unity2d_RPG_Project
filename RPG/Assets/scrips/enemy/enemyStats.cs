@@ -3,11 +3,15 @@ using UnityEngine.Video;
 
 public class enemyStats : MonoBehaviour
 {
-    [SerializeField] entityClass enemy;
+    [SerializeField] public static entityClass enemy;
     [SerializeField] public classes classe;
-    void Start()
+    [SerializeField] public fightEvent fightEvent;
+    public string enemyClass;
+    public string coisa;
+    void Awake()
     {
-        classes.classSetter(ref enemy, classe.enemy1);
-        Debug.Log($"Status do inimigo: \nvida: {enemy.vida}, defesa: {enemy.defesa}, ataque: {enemy.ataque}, distâcia: {enemy.distância}, magia: {enemy.magia}");
+        classes.classSetter(ref enemy, classe.enemyStatsList[coisa]);
+        fightEvent.tempEnemy = enemy;
+        //Debug.Log($"Status do inimigo: \nvida: {enemy.vida}, defesa: {enemy.defesa}, ataque: {enemy.ataque}, distâcia: {enemy.distância}, magia: {enemy.magia}");
     }
 }
