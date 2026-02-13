@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class enemyManager : dialogs
 {
     [SerializeField] public int originScene;
+
     private void Start()
     {
         contentSetter("textPanel2", "placeHolder2");

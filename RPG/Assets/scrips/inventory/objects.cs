@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "New Objects", menuName = "Inventory Objects/Create New")]
-public class obects : ScriptableObject
+public class Objects : ScriptableObject
 {
     public string itemName;
     public Sprite itemSprite;
