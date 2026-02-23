@@ -10,9 +10,6 @@ public struct entityClass
 }
 public class classes : MonoBehaviour
 {
-    public int[] guerreiroStats = { 46, 28, 16, 5, 5, };
-    public int[] magoStats = {33,15,18,14,20};
-    public int[] arqueiroStats = { 38, 15, 17, 20, 10 };
 
     public Dictionary<string, int[]> enemyStatsList = new Dictionary<string, int[]>
     {
@@ -28,5 +25,9 @@ public class classes : MonoBehaviour
         n.ataque = v[2];
         n.distância = v[3];
         n.magia = v[4];
+    }
+    public static void spriteSetter(SpriteRenderer pSprite, Sprite inicialSprite)
+    {
+        pSprite.sprite = inicialSprite;
     }
 }

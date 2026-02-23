@@ -227,6 +227,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -366,6 +367,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &745037744
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -411,6 +413,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -5463572059183496319, guid: 656014a8a7fba794fa90270113a70ba3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -420,7 +423,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &745037745
 Transform:
@@ -469,6 +471,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playerManager
   classes: {fileID: 0}
   fightEvent: {fileID: 0}
+  guerreiro: {fileID: 0}
+  mago: {fileID: 0}
+  arqueiro: {fileID: 0}
+  exp: 0
   speed: 5
   invent: 0
   open: 0
@@ -488,6 +494,8 @@ MonoBehaviour:
   fightEvent: {fileID: 0}
   enemyClass: 
   coisa: 
+  winState: 0
+  dieExp: 15
 --- !u!4 &1021779404
 Transform:
   m_ObjectHideFlags: 0
@@ -643,8 +651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fightButton
   buttonFightBtn: {fileID: 1706868885}
-  playerManager: {fileID: 0}
-  fightEvent: {fileID: 0}
+  playerManager: {fileID: 1021779402}
+  fightEvent: {fileID: 369946052196687853}
 --- !u!1001 &1765301862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,10 +1025,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999fc6dcbe156044b7a2ec4e99b9a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fightEvent
-  classes: {fileID: 0}
-  exitScript: {fileID: 0}
-  playerManager: {fileID: 0}
-  enemyStats: {fileID: 0}
+  classes: {fileID: 253790019}
+  exitScript: {fileID: 369946052196687854}
+  playerManager: {fileID: 1021779402}
+  enemyStats: {fileID: 1021779403}
+  expLevel: 0
+--- !u!114 &369946052196687854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1883732469875872586, guid: a8fc0b9fd50ae3845bca9ae377ac5444, type: 3}
+  m_PrefabInstance: {fileID: 369946052196687851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162353810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dfab5b7ff557b4c9d25b0dc1210ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::exitScript
 --- !u!4 &834927415006794738
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,6 +1058,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1367533194310493589
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1083,6 +1104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1092,7 +1114,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5473371522195566822
 MonoBehaviour:
@@ -1110,6 +1131,8 @@ MonoBehaviour:
   fightEvent: {fileID: 0}
   enemyClass: 
   coisa: enemy1
+  winState: 0
+  dieExp: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

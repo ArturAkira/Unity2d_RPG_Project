@@ -47,12 +47,14 @@ public class dialogs : MonoBehaviour
     public Dictionary<int, string> npcDialog1 = new Dictionary<int, string>()
         {
             {0, "olá "+startPlay.playerName+", parece que você acordou" },
-            { 1, "A saída é por aqui." },
-            {2, "pode ir embora." }
+            {1, "Preciso da sua ajuda!" },
+            {2, "tem um goblin maldito bloqueando a porta..." },
+            {3, "por favor, pega aquela arma e acaba com ele!" }
         };
     public Dictionary<int, string> enemyDialog1 = new Dictionary<int, string>()
         {
             {0, "Aí seu fraco!" },
-            { 1, "luta comigo, seu frango" }
+            {1, "Ta achando que vai conseguir sair daqui?" },
+            {2, "então cai pra treta!" }
         };
 }

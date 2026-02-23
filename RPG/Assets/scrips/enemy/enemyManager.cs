@@ -24,6 +24,9 @@ public class enemyManager : dialogs
     }
     private void OnTriggerExit2D(Collider2D col)
     {
+        if (!this || !gameObject.scene.isLoaded)
+            return;
+
         if (col.CompareTag("Player") == true)
         {
             placeHolder = false;

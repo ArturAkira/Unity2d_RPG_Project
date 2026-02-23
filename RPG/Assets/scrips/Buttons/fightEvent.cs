@@ -7,6 +7,7 @@ public class fightEvent : MonoBehaviour
     [SerializeField] private exitScript exitScript;
     [SerializeField] private playerManager playerManager;
     [SerializeField] private enemyStats enemyStats;
+    public int expLevel;
     void Start()
     {
         tempPlayer = playerManager.playerClass;
@@ -21,12 +22,15 @@ public class fightEvent : MonoBehaviour
         
     }
     
-    public static void ataque(ref entityClass ataque, ref entityClass dano)
+    public void ataque(ref entityClass ataque, ref entityClass dano)
     {
-        dano.vida -= ataque.ataque - dano.defesa;
-        Debug.Log(dano.vida);
+        if (dano.defesa > ataque.ataque){dano.vida -= ataque.ataque - dano.defesa;}
+        else { dano.vida -= 1; }
+            Debug.Log(dano.vida);
         if (tempEnemy.vida <= 0)
         {
+            playerManager.playerClass.vida = tempPlayer.vida;
+            GameManager.instance.exp = enemyStats.dieExp; 
             exitScript.buttonExitClick();
             Debug.Log("voce venceu");
         }
@@ -34,6 +38,14 @@ public class fightEvent : MonoBehaviour
         {
             exitScript.buttonExitClick();
             Debug.Log("voce perdeu");
+        }
+    }
+
+    public void levelUP(int exp)
+    {
+        if(exp >= expLevel)
+        {
+
         }
     }
 }
