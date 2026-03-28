@@ -1060,6 +1060,18 @@ MonoBehaviour:
   arqueiroStats: 260000000f00000011000000140000000a000000
   exp: 0
   playerClassSelection: 0
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  slotAmount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1755264325
 Transform:
   m_ObjectHideFlags: 0

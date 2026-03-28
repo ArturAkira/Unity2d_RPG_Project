@@ -10,6 +10,8 @@ public class inventoryController : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        GameManager.instance.slots = new Objects[slotImage.Length];
+        GameManager.instance.slotAmount = new int[slotImage.Length];
     }
 
     public void UpdateUI()
