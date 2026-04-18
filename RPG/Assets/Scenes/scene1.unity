@@ -5473,6 +5473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playerManager
   classes: {fileID: 331055582}
   fightEvent: {fileID: 1719053245}
+  animator: {fileID: 1084107839}
   guerreiro: {fileID: 1175145117, guid: c811d01211df6e04cb000a36fa288a44, type: 3}
   mago: {fileID: -6192798801524230919, guid: c811d01211df6e04cb000a36fa288a44, type: 3}
   arqueiro: {fileID: -7573945682839294444, guid: c811d01211df6e04cb000a36fa288a44, type: 3}
@@ -7894,6 +7895,7 @@ MonoBehaviour:
   start: {fileID: 0}
   selecNumber: 0
   nameInputField: {fileID: 0}
+  classes: {fileID: 0}
 --- !u!4 &1719053244
 Transform:
   m_ObjectHideFlags: 0
@@ -8012,7 +8014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891137684447097168, guid: 8493149432ab9a242a793ee5978ee019, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 160.00003
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 3891137684447097168, guid: 8493149432ab9a242a793ee5978ee019, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8171,7 +8173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2c123b1dac1ec479bf187de788ed71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::itemType
-  objectType: {fileID: 11400000, guid: c9f9dd59f05a7d74898ceb9e7ede0cf8, type: 2}
+  objectType: {fileID: 0}
+  classes: {fileID: 331055582}
+  index: 0
 --- !u!61 &1902208889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8415,6 +8419,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   slotAmount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  gameWepons: []
 --- !u!4 &2029387586
 Transform:
   m_ObjectHideFlags: 0
@@ -9039,15 +9044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a820cd78f14a52b47abd6c704c902165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::btnScript
-  classes: {fileID: 0}
-  fightEvent: {fileID: 0}
-  guerreiro: {fileID: 0}
-  mago: {fileID: 0}
-  arqueiro: {fileID: 0}
-  speed: 10
-  invent: 0
-  open: 0
   inventBtn: {fileID: 7580644910779237300}
+  playerManager: {fileID: 0}
 --- !u!224 &3843704330655364026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9240,6 +9238,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: mageWepons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: archerWepons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: 'mageWepons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c9f9dd59f05a7d74898ceb9e7ede0cf8, type: 2}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: warriorWepons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: 'archerWepons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 160cd497a156c5944b1b1318bbcf4302, type: 2}
+    - target: {fileID: 419709247551857068, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
+      propertyPath: 'warriorWepons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 203623736dadcd2419deb786864cddc8, type: 2}
     - target: {fileID: 5233234925948171243, guid: 5d8a5d4e3e9e1c24b8fadc7d421d21ed, type: 3}
       propertyPath: m_Name
       value: classes

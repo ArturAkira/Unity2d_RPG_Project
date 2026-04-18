@@ -8,6 +8,7 @@ public class startPlay : MonoBehaviour
     [SerializeField] private Button start;
     [SerializeField] public int selecNumber;
     [SerializeField] private TMP_InputField nameInputField;
+    [SerializeField] private classes classes;
     public static string playerName;
 
     private void Awake()
@@ -16,7 +17,8 @@ public class startPlay : MonoBehaviour
     {
         playerName = nameInputField.text;
         GameManager.instance.playerClassSelection = selecNumber;
-        if (playerName != "")
+        classes.itemClassSetter();
+        if (!string.IsNullOrWhiteSpace(playerName))
         {SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);}
     }
 }

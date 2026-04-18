@@ -5,13 +5,12 @@ public class playerManager : MonoBehaviour
 {
     [SerializeField] private classes classes;
     [SerializeField] private fightEvent fightEvent;
+    [SerializeField] Animator animator;
     private Rigidbody2D player;
     private Vector2 moveInput;
     private GameObject inventario;
     private SpriteRenderer sr;
-    public Sprite guerreiro;
-    public Sprite mago;
-    public Sprite arqueiro;
+    public Sprite guerreiro, mago, arqueiro;
     private int maxLife;
     public float speed = 5f;
     public bool invent, open;
@@ -34,11 +33,13 @@ public class playerManager : MonoBehaviour
                 case 0:
                     Debug.Log(GameManager.instance.guerreiroStats);
                     classes.classSetter(ref playerClass, GameManager.instance.guerreiroStats);
+                    animator.SetInteger("player-selection", 0);
                     classes.spriteSetter(sr, guerreiro);
                     Debug.Log("você escolheu o guerreiro");
                     break;
                 case 1:
                     classes.classSetter(ref playerClass, GameManager.instance.magoStats);
+                    animator.SetInteger("player-selection", 1);
                     classes.spriteSetter(sr, mago);
                     Debug.Log("você escolheu o mago");
                     Debug.Log(sr);
@@ -46,6 +47,7 @@ public class playerManager : MonoBehaviour
                     break;
                 case 2:
                     classes.classSetter(ref playerClass, GameManager.instance.arqueiroStats);
+                    animator.SetInteger("player-selection", 2);
                     classes.spriteSetter(sr, arqueiro);
                     Debug.Log("você escolheu o arqueiro");
                     break;
@@ -65,7 +67,10 @@ public class playerManager : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = movementWay();
-        if(dialogs.i == 0) { player.MovePosition(player.position + (moveInput * speed * Time.fixedDeltaTime)); }
+        if(dialogs.i == 0) { player.MovePosition(player.position + (moveInput * speed * Time.fixedDeltaTime)); 
+                             animator.SetFloat("up-down", moveInput.y);
+                             animator.SetFloat("left-right", moveInput.x); 
+        }
     }
     private Vector2 movementWay()
     {
@@ -73,9 +78,10 @@ public class playerManager : MonoBehaviour
         {
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
-            if (moveY != 0) { moveX = 0; }
-            if (moveX != 0) { moveY = 0; }
-            moveInput = new Vector2(moveX, moveY).normalized;
+            if (moveY != 0) { moveX = 0; animator.SetBool("isrunning", true);  }
+            if (moveX != 0) { moveY = 0; animator.SetBool("isrunning", true);  }
+            if (moveX == 0 && moveY == 0) { animator.SetBool("isrunning", false); }
+                moveInput = new Vector2(moveX, moveY).normalized;
             return moveInput;
         }
         else { return moveInput = new Vector2(0,0); }

@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
     public HashSet<string> collectedItems = new HashSet<string>();
     public Objects[] slots;
     public int[] slotAmount;
+    public List<Objects> gameWepons;
 
     private void Awake()
-    {
-        
+    { 
         if (instance == null)
         {
             instance = this;

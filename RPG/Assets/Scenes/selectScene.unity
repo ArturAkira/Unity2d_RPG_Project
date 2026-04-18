@@ -402,6 +402,10 @@ PrefabInstance:
       value: arqueiroSelec
       objectReference: {fileID: 0}
     - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
+      propertyPath: classes
+      value: 
+      objectReference: {fileID: 797593261}
+    - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
       propertyPath: selecNumber
       value: 2
       objectReference: {fileID: 0}
@@ -419,6 +423,56 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 644945776403827698, guid: 394fd3de617335f428e110222e0379f9, type: 3}
   m_PrefabInstance: {fileID: 499667997}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &797593260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797593262}
+  - component: {fileID: 797593261}
+  m_Layer: 0
+  m_Name: classes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &797593261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797593260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77972aa1f0f96bc449e23ae27101a9dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::classes
+  warriorWepons:
+  - {fileID: 11400000, guid: 203623736dadcd2419deb786864cddc8, type: 2}
+  mageWepons:
+  - {fileID: 11400000, guid: c9f9dd59f05a7d74898ceb9e7ede0cf8, type: 2}
+  archerWepons:
+  - {fileID: 11400000, guid: 160cd497a156c5944b1b1318bbcf4302, type: 2}
+--- !u!4 &797593262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797593260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32099, y: -11.66847, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &811746885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,6 +573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: magoSelec
       objectReference: {fileID: 0}
+    - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
+      propertyPath: classes
+      value: 
+      objectReference: {fileID: 797593261}
     - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
       propertyPath: selecNumber
       value: 1
@@ -1072,6 +1130,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   slotAmount: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  gameWepons: []
 --- !u!4 &1755264325
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,6 +1649,10 @@ PrefabInstance:
       value: guerreiroSelec
       objectReference: {fileID: 0}
     - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
+      propertyPath: classes
+      value: 
+      objectReference: {fileID: 797593261}
+    - target: {fileID: 6032996241434085422, guid: 394fd3de617335f428e110222e0379f9, type: 3}
       propertyPath: nameInputField
       value: 
       objectReference: {fileID: 338276333}
@@ -1606,3 +1669,4 @@ SceneRoots:
   - {fileID: 2005183659}
   - {fileID: 951999614}
   - {fileID: 1755264325}
+  - {fileID: 797593262}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 public struct entityClass
 {
     public int vida;
@@ -10,6 +11,9 @@ public struct entityClass
 }
 public class classes : MonoBehaviour
 {
+    public List<Objects> warriorWepons;
+    public List<Objects> mageWepons;
+    public List<Objects> archerWepons;
 
     public Dictionary<string, int[]> enemyStatsList = new Dictionary<string, int[]>
     {
@@ -29,5 +33,28 @@ public class classes : MonoBehaviour
     public static void spriteSetter(SpriteRenderer pSprite, Sprite inicialSprite)
     {
         pSprite.sprite = inicialSprite;
+    }
+    public void itemClassSetter()
+    {
+        switch (GameManager.instance.playerClassSelection)
+        {
+            case 0:
+                GameManager.instance.gameWepons = warriorWepons;
+                break;
+            case 1:
+                GameManager.instance.gameWepons = mageWepons;
+                break;
+            case 2:
+                GameManager.instance.gameWepons = archerWepons;
+                break;
+        }
+    }
+    public Objects itemSetter(int x)
+    {
+        if (GameManager.instance.gameWepons != null && x < GameManager.instance.gameWepons.Count)
+        {
+            return GameManager.instance.gameWepons[x];
+        }
+        return null;
     }
 }
